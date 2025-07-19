@@ -175,21 +175,21 @@
     grid-template-columns: 1fr;
     gap: 0; /* 列のギャップは不要なのでリセット */
     }
-
     .company-info-list dt {
-    text-align: left; /* ★中央揃えから左揃えに変更（こちらの方が見やすいです） */
-    font-weight: bold;
-    padding-left: 0;   /* ★padding-leftに修正し、値を0に */
-    padding-bottom: 0.5em;
-    margin-bottom: 0.5em;
-    border-bottom: 1px solid #eee;
+        text-align: center; /* ★左揃えから中央揃えに変更 */
+        font-weight: bold;
+        padding-left: 0;
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid #eee;
+    }
+        .company-info-list dd {
+        text-align: center; /* ★中央揃えを追加 */
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 1.5em;
     }
 
-    .company-info-list dd {
-    border-left: none;  /* 左の区切り線をリセット */
-    padding-left: 0;   /* 左の余白をリセット */
-    margin-bottom: 1.5em; /* 次の項目との間にしっかり余白を設ける */
-    }
     .fujitop .description {
         font-size: 16px;
         margin: 20px auto 40px auto;
@@ -232,5 +232,8 @@
     }
     .fujitop .map iframe {
         height: 300px;
+    }
+    .company-info-list {
+
     }
 }
