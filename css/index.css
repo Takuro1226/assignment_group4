@@ -167,3 +167,9 @@
         line-height: 1.6;
     }
 }
+
+@media (max-width: 960px) {
+    .content-overlay {
+        background-color: rgba(0, 0, 0, 0.6); 
+    }
+}
