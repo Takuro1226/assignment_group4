@@ -1,185 +1,184 @@
-@charset "utf-8";
-
+/* === ヒーロービデオセクション === */
 .video-background-container {
-    position: relative; 
+    position: relative;
     width: 100%;
-    height: 100vh; 
-    overflow: hidden; 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    height: 100vh; /* 画面全体の高さ */
+    overflow: hidden;
 }
 
 .background-video {
-    position: absolute; 
+    position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; 
-    transform: translate(-50%, -50%); 
-    object-fit: cover; 
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* アスペクト比を保ちつつ全体をカバー */
 }
 
 .content-overlay {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    z-index: 1; 
-    display: flex; 
+    position: relative; /* z-indexをビデオより上にするため */
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4); 
-    padding: 0; 
-    margin: 0; 
-    border-radius: 0; 
-    box-shadow: none; 
-}
-
-.scroll-animation-section {
+    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒いオーバーレイ */
     text-align: center;
-    background: none;
-    margin: auto; 
-}
-
-.animated-text {
-    opacity: 0;
-    transform: translateY(100px); 
-    transition: opacity 2s ease-out; 
-    margin-bottom: 60px; 
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); 
-}
-
-.animated-text.is-active {
-    opacity: 1;
-    transform: translateY(0);
+    color: #ffffff;
 }
 
 .animated-text h3 {
-    font-family: 'Georgia', serif; /* より古典的で高級感のあるフォント */
-    font-size: 80px; /* フォントサイズを大きく */
+    font-family: 'Georgia', serif;
+    font-size: 70px;
     font-weight: bold;
-    color: #d1b30b; /* 鮮やかなゴールド */
+    color: #ffffff;
     margin-bottom: 25px;
-    letter-spacing: 2px; /* 文字間隔を広げてゆったり感を出す */
-    text-shadow: 0 0 15px rgb(255, 253, 226); /* 見出しに強い輝き */
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 影を調整 */
 }
 
 .animated-text p {
-    font-family: 'Palatino Linotype', 'Book Antiqua', serif; /* 本文も高級感のあるフォントに */
-    font-size: 30px; /* フォントサイズを少し大きく */
-    line-height: 2; /* 行間を広げて読みやすく、贅沢に */
-    color: #f5dfb5; /* 落ち着いたクリーム色に近いゴールド */
-    max-width: 900px; /* テキストの幅を少し広げる */
+    font-family: 'Palatino Linotype', serif;
+    font-size: 24px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
     margin: 0 auto;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 読みやすい程度の影 */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* 共通のスタイル */
-.scroll-reveal-section {
-    opacity: 0; /* 最初は透明 */
-    transition: opacity 1s ease-out, transform 3s ease-out; /* 透明度と位置のアニメーション */
-    margin-top: 80px; /* セクション間の余白（任意） */
-    padding: 20px; /* コンテンツのパディング（任意） */
-    background-color: #f0f0f0; /* 背景色（任意） */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影（任意） */
-    max-width: 960px; /* 最大幅（任意） */
-    margin-left: auto;
-    margin-right: auto;
+
+/* === 次のオリンピック情報セクション === */
+.next-olympics {
+    padding: 80px 20px;
+    background-color: #ffffff;
 }
 
 .next-olympics h1 {
-    margin-top: 25px;
-    font-size: 40px; 
+    font-size: 40px;
     font-weight: bold;
-    color: #A52A2A;
+    color: #1a3b5f; /* 濃い紺色 */
     text-align: center;
-    margin-bottom: 25px; 
-    position: relative;
+    margin-bottom: 10px;
 }
 
 .next-olympics h2 {
-    margin-top: 25px;
-    font-size: 20px; 
-    font-weight: bold;
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 25px; 
+    margin-bottom: 50px;
     position: relative;
+    color: #555;
 }
 
+/* h2の下の区切り線 (エラーを修正) */
 .next-olympics h2::after {
-    margin-top: 25px;
-    font-size: 20px; 
-    font-weight: bold;
-    text-align: left;
-    margin-bottom: 25px; 
-    position: relative;
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1a3b5f;
+    margin: 15px auto 0 auto;
 }
 
 .next-olympics-los {
-    width: 930px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    text-align: center; /* 画像を中央に */
+    margin-bottom: 50px;
+}
+
+.next-olympics-los img {
+    max-width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* 式典情報リストのスタイル */
 .ceremony-info {
     display: grid;
-    grid-template-columns: 150px auto; /* 1列目(dt)を150px、2列目(dd)を残り全部に */
-    gap: 1em; /* 行間と列間の余白 */
-    align-items: center; /* 内容を垂直方向に中央揃え */
-
-  /* 以下は見栄えを良くするための追加スタイル */
+    grid-template-columns: 180px auto; /* 1列目の幅を調整 */
+    gap: 1.2em 1em; /* 余白を調整 */
+    align-items: baseline; /* テキストの上端を揃える */
     max-width: 800px;
-    margin: 2em auto;
+    margin: 0 auto;
     padding: 2em;
-    background-color: #f9f9f9;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
     border-radius: 8px;
 }
 
-/* 項目名（dt）のスタイル */
 .ceremony-info dt {
     font-weight: bold;
-    text-align: right; /* 右揃えにして区切りを明確に */
+    text-align: right;
     color: #333;
+    padding-right: 1em;
 }
 
-/* 情報（dd）のスタイル */
 .ceremony-info dd {
-    margin: 0; /* ddが元々持っている余白をリセット（重要） */
+    margin: 0;
+    border-left: 2px solid #dee2e6;
     padding-left: 1em;
-    border-left: 1px solid #ddd;
 }
 
-/* レスポンシブデザイン */
-@media (max-width: 800px) {
-    /* video-section のメディアクエリは不要 */
-    .scroll-animation-section {
-        padding: 80px 15px;
+
+/* === レスポンシブ対応 (画面幅が768px以下の場合) === */
+@media (max-width: 768px) {
+    /* スマホではパフォーマンスのためビデオを非表示に */
+    .background-video {
+        display: none;
     }
-    .animated-text {
-        margin-bottom: 30px;
+    .video-background-container {
+      /* 代わりに背景色や画像を設定しても良い */
+      background-color: #232a34;
+      height: 80vh;
     }
+
     .animated-text h3 {
-        font-size: 32px;
+        font-size: 36px;
     }
+
     .animated-text p {
         font-size: 18px;
-        line-height: 1.6;
     }
-}
+    
+    .next-olympics {
+        padding: 50px 15px;
+    }
 
-@media (max-width: 768px) { /* スマートフォンなど狭い画面の場合 */
-    .background-video {
-        display: none; /* 動画を非表示にする */
+    .next-olympics h1 {
+        font-size: 28px;
     }
-    .content-overlay {
-        background-color: rgba(0, 0, 0, 0.6); /* モバイルでは少し濃いめにしても良い */
+
+    .next-olympics h2 {
+        font-size: 16px;
+    }
+
+.next-olympics-los img {
+    width: 100%; /* 親要素の幅いっぱいに広げる */
+    height: 450px; /* ★高さを固定（好きな高さに調整してください） */
+    object-fit: cover; /* ★画像の比率を保ったまま、領域全体を覆う */
+  
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+    .ceremony-info {
+        /* スマホでは1列表示に */
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .ceremony-info dt {
+        text-align: left;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .ceremony-info dd {
+        border-left: none;
+        padding: 0.8em 0 1.5em 0;
     }
 }
