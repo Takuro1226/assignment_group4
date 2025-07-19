@@ -166,4 +166,25 @@
         font-size: 18px;
         line-height: 1.6;
     }
+
+    .ceremony-info {
+        text-align: center;
+        grid-template-columns: 1fr;
+        gap: 0; /* 列のギャップは不要なのでリセット */
+    }
+    .ceremony-info dt {
+        text-align: center; /* ★左揃えから中央揃えに変更 */
+        font-weight: bold;
+        padding-left: 0;
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid #eee;
+    }
+    .ceremony-info dd {
+        text-align: center; /* ★中央揃えを追加 */
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 1.5em;
+    }
+
 }
