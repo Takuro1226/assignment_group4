@@ -172,6 +172,7 @@
 
     .company-info-list {
     /* グリッドを2列から1列レイアウトに変更 */
+    text-align: center;
     grid-template-columns: 1fr;
     gap: 0; /* 列のギャップは不要なのでリセット */
     }
