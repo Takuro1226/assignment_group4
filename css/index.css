@@ -1,9 +1,14 @@
-/* === ヒーロービデオセクション === */
+@charset "utf-8";
+
 .video-background-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* 画面全体の高さ */
+    height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .background-video {
@@ -14,171 +19,160 @@
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 1;
+    z-index: -1;
     transform: translate(-50%, -50%);
-    object-fit: cover; /* アスペクト比を保ちつつ全体をカバー */
+    object-fit: cover;
 }
 
 .content-overlay {
-    position: relative; /* z-indexをビデオより上にするため */
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: flex;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒いオーバーレイ */
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 0; 
+    margin: 0; 
+    border-radius: 0; 
+    box-shadow: none; 
+}
+
+.scroll-animation-section {
     text-align: center;
-    color: #ffffff;
+    background: none;
+    margin: auto; 
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(100px); 
+    transition: opacity 2s ease-out; 
+    margin-bottom: 60px; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); 
+}
+
+.animated-text.is-active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animated-text h3 {
-    font-family: 'Georgia', serif;
-    font-size: 70px;
+    font-family: 'Georgia', serif; 
+    font-size: 80px; 
     font-weight: bold;
-    color: #ffffff;
+    color: #d1b30b; 
     margin-bottom: 25px;
-    letter-spacing: 2px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 影を調整 */
+    letter-spacing: 2px; 
+    text-shadow: 0 0 15px rgb(255, 253, 226); 
 }
 
 .animated-text p {
-    font-family: 'Palatino Linotype', serif;
-    font-size: 24px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 800px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', serif; 
+    font-size: 30px; 
+    line-height: 2; 
+    color: #f5dfb5; 
+    max-width: 900px; 
     margin: 0 auto;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
 }
 
-
-/* === 次のオリンピック情報セクション === */
-.next-olympics {
-    padding: 80px 20px;
-    background-color: #ffffff;
+.scroll-reveal-section {
+    opacity: 0; 
+    transition: opacity 1s ease-out, transform 3s ease-out; 
+    margin-top: 80px; 
+    padding: 20px; 
+    background-color: #f0f0f0; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    max-width: 960px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .next-olympics h1 {
-    font-size: 40px;
+    margin-top: 25px;
+    font-size: 40px; 
     font-weight: bold;
-    color: #1a3b5f; /* 濃い紺色 */
+    color: #A52A2A;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 25px; 
+    position: relative;
 }
 
 .next-olympics h2 {
-    font-size: 20px;
+    margin-top: 25px;
+    font-size: 20px; 
+    font-weight: bold;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px; 
     position: relative;
-    color: #555;
 }
 
-/* h2の下の区切り線 (エラーを修正) */
 .next-olympics h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #1a3b5f;
-    margin: 15px auto 0 auto;
+    margin-top: 25px;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 25px; 
+    position: relative;
 }
 
 .next-olympics-los {
-    text-align: center; /* 画像を中央に */
-    margin-bottom: 50px;
+    max-width: 100%; 
+    width: auto; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-.next-olympics-los img {
-    max-width: 100%;
-    height: auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* 式典情報リストのスタイル */
 .ceremony-info {
     display: grid;
-    grid-template-columns: 180px auto; /* 1列目の幅を調整 */
-    gap: 1.2em 1em; /* 余白を調整 */
-    align-items: baseline; /* テキストの上端を揃える */
+    grid-template-columns: 150px auto; 
+    gap: 1em;
+    align-items: center; 
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2em auto;
     padding: 2em;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: #f9f9f9;
     border-radius: 8px;
 }
 
 .ceremony-info dt {
     font-weight: bold;
-    text-align: right;
+    text-align: right; 
     color: #333;
-    padding-right: 1em;
 }
 
 .ceremony-info dd {
-    margin: 0;
-    border-left: 2px solid #dee2e6;
+    margin: 0; 
     padding-left: 1em;
+    border-left: 1px solid #ddd;
 }
 
-
-/* === レスポンシブ対応 (画面幅が768px以下の場合) === */
-@media (max-width: 768px) {
-    /* スマホではパフォーマンスのためビデオを非表示に */
-    .background-video {
-        display: none;
+@media (max-width: 800px) {
+    .scroll-animation-section {
+        padding: 80px 15px;
     }
-    .video-background-container {
-      /* 代わりに背景色や画像を設定しても良い */
-      background-color: #232a34;
-      height: 80vh;
+    .animated-text {
+        margin-bottom: 30px;
     }
-
     .animated-text h3 {
-        font-size: 36px;
+        font-size: 32px;
     }
-
     .animated-text p {
         font-size: 18px;
+        line-height: 1.6;
     }
-    
-    .next-olympics {
-        padding: 50px 15px;
-    }
-
-    .next-olympics h1 {
-        font-size: 28px;
-    }
-
-    .next-olympics h2 {
-        font-size: 16px;
-    }
-
-.next-olympics-los img {
-    width: 100%; /* 親要素の幅いっぱいに広げる */
-    height: 450px; /* ★高さを固定（好きな高さに調整してください） */
-    object-fit: cover; /* ★画像の比率を保ったまま、領域全体を覆う */
-  
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
-    .ceremony-info {
-        /* スマホでは1列表示に */
-        grid-template-columns: 1fr;
-        gap: 0;
+
+@media (max-width: 768px) { 
+    .background-video {
+        display: none; 
     }
-    .ceremony-info dt {
-        text-align: left;
-        padding-bottom: 0.5em;
-        border-bottom: 1px solid #dee2e6;
-    }
-    .ceremony-info dd {
-        border-left: none;
-        padding: 0.8em 0 1.5em 0;
+    .content-overlay {
+        background-color: rgba(0, 0, 0, 0.6); 
     }
 }

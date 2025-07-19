@@ -195,3 +195,12 @@ img {
         font-size: 12px;
     }
 }
+
+@media (max-width: 800px) {
+    .toggle-menu-button {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url(../images/common/menu.png);
+    }
+}
