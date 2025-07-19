@@ -1,0 +1,139 @@
+.title {
+    height: 310px;
+    background-image: url('../images/history/history.png');/* ここにあなたの画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #4b2c14;
+}
+
+.title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px; 
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 20px; 
+    margin-top: 15px;
+}
+
+
+
+.history-content {
+    width: 1200px;
+    max-width: 90%;
+    margin: 75px auto;
+    padding: 30px; 
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.history-content h2 {
+    font-size: 28px; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px; 
+    position: relative;
+}
+
+.history-content h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 20px auto 0 auto;
+}
+
+.history-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.history-content th,
+.history-content td {
+    border: 1px solid #ddd;
+    padding: 15px; 
+    text-align: left;
+    font-size: 16px; 
+}
+
+.history-content th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    color: #333;
+}
+
+.history-content tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.history-content a {
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.history-content a:hover {
+    color: #1a3b5f;
+}
+
+.swiper {
+    max-width: 750px; 
+    max-height: 500px;
+    margin: 40px auto; 
+}
+
+.gold-medal::before {
+    content: "🥇"; 
+    margin-right: 4px;
+}
+
+.silver-medal::before {
+    content: "🥈"; 
+    margin-right: 4px;
+}
+
+.bronze-medal::before {
+    content: "🥉"; 
+    margin-right: 4px;
+}
+
+
+/* レスポンシブデザイン */
+@media (max-width: 800px) {
+    .title {
+        height: 250px;
+    }
+    .title h1 {
+        font-size: 36px;
+    }
+    .title p {
+        font-size: 16px;
+    }
+    .history-content {
+        padding: 20px;
+        margin-top: 40px;
+    }
+    .history-content h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .history-content th,
+    .history-content td {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .history-content table {
+        display: block; 
+        overflow-x: auto; 
+        white-space: nowrap; 
+    }
+}

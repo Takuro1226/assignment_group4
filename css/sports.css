@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.title {
+    height: 310px;
+    /* 背景画像をセット */
+    background-image: url('../images/sports/back.png');/* ここにあなたの画像のパスを指定 */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* 画像を要素全体に広げる */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #4b2c14;
+    /* background-color は背景画像の下に表示されるので、必要なければ削除 */
+    /* background-color: #A52A2A; */
+}
+
+.title h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.sport-section {
+    width: 930px;
+    max-width: 90%;
+    margin: 75px auto;
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    opacity: 0; 
+    transition:  transform 3s ease-out; 
+}
+
+.sport-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.sport-section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 20px auto 0 auto;
+}
+
+.sport-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sport-section img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+
+.scroll-reveal-section.hidden-left .sport-section { 
+    transform: translateX(-500px); 
+}
+
+.scroll-reveal-section.hidden-right .sport-section { 
+    transform: translateX(500px); 
+}
+
+.scroll-reveal-section.is-visible .sport-section {
+    opacity: 1;
+    transform: translateX(0); 
+}
+
+@media (max-width: 800px) {
+    .title {
+        height: 250px;
+    }
+    .title h1 {
+        font-size: 36px;
+    }
+    .title p {
+        font-size: 16px;
+    }
+    .sport-section {
+        padding: 30px;
+        margin-top: 40px;
+    }
+    .sport-section h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .sport-section p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    .sport-section img {
+        max-width: 100%;
+    }
+    .scroll-reveal-section.hidden-left .sport-section,
+    .scroll-reveal-section.hidden-right .sport-section {
+        transform: translateX(0); 
+    }
+    .scroll-reveal-section.is-visible .sport-section {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

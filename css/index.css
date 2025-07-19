@@ -1,0 +1,185 @@
+@charset "utf-8";
+
+.video-background-container {
+    position: relative; 
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.background-video {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; 
+    transform: translate(-50%, -50%); 
+    object-fit: cover; 
+}
+
+.content-overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: 1; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 0; 
+    margin: 0; 
+    border-radius: 0; 
+    box-shadow: none; 
+}
+
+.scroll-animation-section {
+    text-align: center;
+    background: none;
+    margin: auto; 
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateY(100px); 
+    transition: opacity 2s ease-out; 
+    margin-bottom: 60px; 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); 
+}
+
+.animated-text.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-text h3 {
+    font-family: 'Georgia', serif; /* より古典的で高級感のあるフォント */
+    font-size: 80px; /* フォントサイズを大きく */
+    font-weight: bold;
+    color: #d1b30b; /* 鮮やかなゴールド */
+    margin-bottom: 25px;
+    letter-spacing: 2px; /* 文字間隔を広げてゆったり感を出す */
+    text-shadow: 0 0 15px rgb(255, 253, 226); /* 見出しに強い輝き */
+}
+
+.animated-text p {
+    font-family: 'Palatino Linotype', 'Book Antiqua', serif; /* 本文も高級感のあるフォントに */
+    font-size: 30px; /* フォントサイズを少し大きく */
+    line-height: 2; /* 行間を広げて読みやすく、贅沢に */
+    color: #f5dfb5; /* 落ち着いたクリーム色に近いゴールド */
+    max-width: 900px; /* テキストの幅を少し広げる */
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 読みやすい程度の影 */
+}
+
+/* 共通のスタイル */
+.scroll-reveal-section {
+    opacity: 0; /* 最初は透明 */
+    transition: opacity 1s ease-out, transform 3s ease-out; /* 透明度と位置のアニメーション */
+    margin-top: 80px; /* セクション間の余白（任意） */
+    padding: 20px; /* コンテンツのパディング（任意） */
+    background-color: #f0f0f0; /* 背景色（任意） */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 影（任意） */
+    max-width: 960px; /* 最大幅（任意） */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-olympics h1 {
+    margin-top: 25px;
+    font-size: 40px; 
+    font-weight: bold;
+    color: #A52A2A;
+    text-align: center;
+    margin-bottom: 25px; 
+    position: relative;
+}
+
+.next-olympics h2 {
+    margin-top: 25px;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px; 
+    position: relative;
+}
+
+.next-olympics h2::after {
+    margin-top: 25px;
+    font-size: 20px; 
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 25px; 
+    position: relative;
+}
+
+.next-olympics-los {
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* 式典情報リストのスタイル */
+.ceremony-info {
+    display: grid;
+    grid-template-columns: 150px auto; /* 1列目(dt)を150px、2列目(dd)を残り全部に */
+    gap: 1em; /* 行間と列間の余白 */
+    align-items: center; /* 内容を垂直方向に中央揃え */
+
+  /* 以下は見栄えを良くするための追加スタイル */
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* 項目名（dt）のスタイル */
+.ceremony-info dt {
+    font-weight: bold;
+    text-align: right; /* 右揃えにして区切りを明確に */
+    color: #333;
+}
+
+/* 情報（dd）のスタイル */
+.ceremony-info dd {
+    margin: 0; /* ddが元々持っている余白をリセット（重要） */
+    padding-left: 1em;
+    border-left: 1px solid #ddd;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 800px) {
+    /* video-section のメディアクエリは不要 */
+    .scroll-animation-section {
+        padding: 80px 15px;
+    }
+    .animated-text {
+        margin-bottom: 30px;
+    }
+    .animated-text h3 {
+        font-size: 32px;
+    }
+    .animated-text p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 768px) { /* スマートフォンなど狭い画面の場合 */
+    .background-video {
+        display: none; /* 動画を非表示にする */
+    }
+    .content-overlay {
+        background-color: rgba(0, 0, 0, 0.6); /* モバイルでは少し濃いめにしても良い */
+    }
+}

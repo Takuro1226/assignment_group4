@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>オリンピック紹介サイト</title>
+        <meta name="description" content="オリンピックの歴史と注目競技を紹介するサイト">
+        <meta name="viewport" content="width=device-width">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+        <link href="css/common.css" rel="stylesheet"> <link href="css/index.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+    </head>
+
+
+
+    <body>
+
+        <header class="header">
+            <div class="header-inner">
+                <a class="header-logo" href="index.html">
+                    <img src="images/common/logo_olympic.png" alt="オリンピックロゴ"> </a>
+                <button class="toggle-menu-button"></button>
+                <div class="header-site-menu">
+                    <nav class="site-menu">
+                        <ul>
+                            <li><a href="index.html">ホーム</a></li> <li><a href="history.html">歴史</a></li>
+                            <li><a href="sports.html">注目競技</a></li>
+                            <li><a href="fujitop.html">概要</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+
+        <main class="main">
+            <div class="video-background-container">
+                    <video id="video1" autoplay muted playsinline class="background-video">
+                        <source src="videos/olympics1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video id="video2" muted playsinline class="background-video" style="display:none;">
+                        <source src="videos/olympics2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                <div class="content-overlay">
+                    <div class="scroll-animation-section">
+                        <div class="animated-text" data-animation="fade-in-up">
+                            <h3>オリンピックは、夢と感動の祭典</h3>
+                        </div>
+                        <div class="animated-text" data-animation="fade-in-up">
+                            <p>誰もが憧れる最高の舞台 <br>アスリートたちの努力と情熱が、数々のドラマを誕生させた</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="next-olympics">
+                <h1>2028年オリンピック</h1> 
+                <h2>開催地：アメリカ ロサンゼルス
+                </h2>
+                    <div class="next-olympics-los">
+                        <img src="images/index/LA.png">
+                    </div>
+                        </div>
+
+            <div class="ceremony-info">
+            <dt>開会式</dt>
+            <dd>2028年7月14日（金）現地時間17:00（日本時間15日9:00）</dd>
+
+            <dt>会場</dt>
+            <dd>ロサンゼルス・メモリアル・コロシアムおよびイングルウッドの2028スタジアム</dd>
+
+            <dt>閉会式</dt>
+            <dd>2028年7月30日（日）現地時間18:00（日本時間31日10:00）</dd>
+
+            <dt>会場</dt>
+            <dd>ロサンゼルス・メモリアル・コロシアム</dd>
+            </div>         
+            
+        </main>
+
+
+
+        <footer class="footer">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li> <li><a href="history.html">歴史</a></li>
+                    <li><a href="sports.html">注目競技</a></li>
+                    <li><a href="fujitop.html">概要</a></li>
+                </ul>
+            </nav>
+            <a class="footer-logo" href="index.html">
+                <img src="images/common/logo_olympic.png" alt="オリンピックロゴ"> </a>
+            <p class="copyright"><small>© FUJI TOP 制作委員会</small></p>
+        </footer>
+
+
+
+    </body>
+
+
+
+</html>
