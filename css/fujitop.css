@@ -177,9 +177,8 @@
 }
 
     .company-info-list dt {
-    /* 右揃えを解除し、左揃えに戻す */
     text-align: center;
-    padding-right: 0; /* 右の余白をリセット */
+    padding-left: 1em  /* 右の余白をリセット */
     
     /* ddとの間に少し余白を追加 */
     margin-bottom: 0.5em;
