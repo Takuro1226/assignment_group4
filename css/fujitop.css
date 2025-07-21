@@ -171,21 +171,20 @@
     }
 
     .company-info-list {
-    /* グリッドを2列から1列レイアウトに変更 */
-    text-align: center;
-    grid-template-columns: 1fr;
-    gap: 0; /* 列のギャップは不要なのでリセット */
+        text-align: center;
+        grid-template-columns: 1fr;
+        gap: 0; 
     }
     .company-info-list dt {
-        text-align: center; /* ★左揃えから中央揃えに変更 */
+        text-align: center; 
         font-weight: bold;
         padding-left: 0;
         padding-bottom: 0.5em;
         margin-bottom: 0.5em;
         border-bottom: 1px solid #eee;
     }
-        .company-info-list dd {
-        text-align: center; /* ★中央揃えを追加 */
+    .company-info-list dd {
+        text-align: center; 
         border-left: none;
         padding-left: 0;
         margin-bottom: 1.5em;

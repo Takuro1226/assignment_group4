@@ -1,6 +1,6 @@
 .title {
     height: 310px;
-    background-image: url('../images/history/history.png');/* ここにあなたの画像のパスを指定 */
+    background-image: url('../images/history/history.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -106,8 +106,6 @@
     margin-right: 4px;
 }
 
-
-/* レスポンシブデザイン */
 @media (max-width: 800px) {
     .title {
         height: 250px;

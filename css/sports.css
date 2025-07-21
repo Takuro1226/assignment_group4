@@ -2,19 +2,16 @@
 
 .title {
     height: 310px;
-    /* 背景画像をセット */
-    background-image: url('../images/sports/back.png');/* ここにあなたの画像のパスを指定 */
+    background-image: url('../images/sports/back.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover; /* 画像を要素全体に広げる */
+    background-size: cover; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #ffffff;
     text-shadow: 1px 1px 10px #4b2c14;
-    /* background-color は背景画像の下に表示されるので、必要なければ削除 */
-    /* background-color: #A52A2A; */
 }
 
 .title h1 {
